@@ -1,27 +1,33 @@
-# CO2 Emissions Analysis
+# Voronoi Regions Visualization with Income Data
 
 ## Project Overview
-This repository focuses on analyzing CO2 emission trends across various countries. The analysis includes handling missing data, performing correlation studies, and visualizing results using predictive models and interactive maps.
+This repository visualizes **Voronoi regions** on an interactive map, where each region is colored based on the income data of various branches. The data is loaded from a CSV file containing the geographic coordinates and income information of different branches, which were extracted from government data in Mexico City (CDMX). The points are transformed for correct geographic mapping, and a C++ code is used from Python to compute the Voronoi regions.
 
 ### Key Features:
-- **Data Cleaning:** Imputation of missing CO2 emission data.
-- **Trend Analysis:** Identification of CO2 emission patterns across countries.
-- **Correlation Analysis:** Statistical exploration of relationships between CO2 emissions, population, and GDP.
-- **Predictive Modeling:** Application of predictive models to study trends and correlations.
-- **Visualization:** Interactive maps and graphical representations of results.
+- **Data Loading:** Load branch data from a CSV file extracted from government data (CDMX).
+- **Point Transformation:** The geographic points are transformed for proper visualization on the map.
+- **Voronoi Region Computation:** Voronoi regions are computed using a C++ code from Python.
+- **Income-based Coloring:** Each Voronoi region is colored according to the income data of the corresponding branch.
+- **Interactive Visualization:** The results are visualized on an interactive map using Folium.
 
 ## Methodology
-### 1. Data Imputation:
-Imputed missing values in CO2 emission data using statistical methods to ensure consistency and accuracy.
+### 1. Data Loading:
+The branch data is loaded from a CSV file containing the following columns:
+- **Latitude**: Geographic latitude of the branch.
+- **Longitude**: Geographic longitude of the branch.
+- **Income**: Income value associated with the branch.
 
-### 2. Trend Analysis:
-Analyzed historical data to identify patterns and trends in CO2 emissions across different countries and regions.
+### 2. Point Transformation:
+The geographic points (latitude and longitude) are transformed for proper positioning and visualization on the map. Each pair of coordinates is flipped to align with the correct axes.
 
-### 3. Correlation and Predictive Modeling:
-Explored the relationship between CO2 emissions, population, and GDP using:
-- Correlation coefficients
-- Linear regression models
-- Other predictive modeling techniques
+### 3. Voronoi Region Computation:
+The Voronoi regions are computed using a C++ algorithm, which is executed through Python using a system call. This algorithm calculates the nearest regions based on the branch locations.
 
-### 4. Visualization:
-Created interactive maps and graphs to effectively communicate findings.
+### 4. Income-based Coloring:
+The Voronoi regions are colored based on the income data of the branches within each region, creating a visual representation of income distribution across the map.
+
+### 5. Visualization:
+The resulting regions and markers are visualized on an interactive map using the **Folium** library, allowing for zooming and panning to explore the geographic distribution of income.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
