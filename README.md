@@ -1,4 +1,4 @@
-# CO₂ Emissions Analysis
+# CO2 Emissions Analysis
 
 ## Overview
 The **CO₂ Emissions Analysis** project focuses on understanding, cleaning, and predicting CO₂ emissions trends by country. The workflow includes data cleaning, grouping by country, imputing missing values, and predicting emissions for the following year.
